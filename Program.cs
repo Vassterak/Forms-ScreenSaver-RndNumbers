@@ -17,6 +17,8 @@ namespace RndScreenSaver
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+
+            //the arguments are necessary for windows, so it will allow proper integration into windows own screen savers
             if (args.Length > 0)
             {
                 string firstArgument = args[0].ToLower().Trim();
