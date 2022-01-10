@@ -1,5 +1,5 @@
 # Forms-ScreenSaver-RndNumbers
-This app is about Windows screen saver that show up pseudorandom numbers.
+This app is about Windows screen saver that show up pseudorandom numbers. (school homework)
 
 Source for this app: https://sites.harding.edu/fmccown/screensaver/screensaver.html
 
