@@ -43,12 +43,20 @@ namespace RndScreenSaver
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Close();
+            Application.Exit();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text += "Nice";
+
+            if (label1.Text.Length > 40)
+                label1.Text = "";
         }
     }
 }
