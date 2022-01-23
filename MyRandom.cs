@@ -12,10 +12,9 @@ namespace RndScreenSaver
         public MyRandom()
         {
             //C like pseudo generation
-            x = Convert.ToUInt32(DateTime.Now.TimeOfDay.TotalMilliseconds);
+            x = Convert.ToUInt32(DateTime.Now.TimeOfDay.TotalMilliseconds); //get seed from current time in day
             a = 1103515245;
             c = 12345;
-
         }
 
         public uint LCG_CLike()

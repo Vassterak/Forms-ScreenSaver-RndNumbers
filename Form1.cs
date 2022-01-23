@@ -65,7 +65,6 @@ namespace RndScreenSaver
                 Console.WriteLine("error: " + ex);
                 throw;
             }
-            //label1.Top = (int)(this.Height / (random.LCG_CLike() % 20));
         }
     }
 }
