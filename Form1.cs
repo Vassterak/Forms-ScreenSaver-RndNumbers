@@ -13,6 +13,7 @@ namespace RndScreenSaver
     public partial class Form1 : Form
     {
         private Point mouseLocation;
+        MyRandom random = new MyRandom();
 
         public Form1 (Rectangle Bounds)
         {
@@ -53,10 +54,18 @@ namespace RndScreenSaver
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label1.Text += "Nice";
-
-            if (label1.Text.Length > 40)
-                label1.Text = "";
+            label1.Text = random.LCG_CLike().ToString();
+            try
+            {
+                label1.Left = (int)(random.LCG_CLike() % this.Width);
+                label1.Top = (int)(random.LCG_CLike() % this.Height);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error: " + ex);
+                throw;
+            }
+            //label1.Top = (int)(this.Height / (random.LCG_CLike() % 20));
         }
     }
 }
