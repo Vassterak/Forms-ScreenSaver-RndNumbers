@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,7 @@ namespace RndScreenSaver
         {
             Cursor.Hide();
             TopMost = true;
+            LoadSettings();
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -39,7 +41,6 @@ namespace RndScreenSaver
 
             // Update current mouse location
             mouseLocation = e.Location;
-
         }
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
@@ -64,6 +65,27 @@ namespace RndScreenSaver
             {
                 Console.WriteLine("error: " + ex);
                 throw;
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadSettings()
+        {
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Rnd_ScreenSaver");
+            if (key == null)
+                timer1.Enabled = true;
+
+            else
+            {
+                if ((int)key.GetValue("GeneratorType") == 0)
+                    timer1.Enabled = true;
+
+                else
+                    timer2.Enabled = true;
             }
         }
     }
