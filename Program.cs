@@ -36,11 +36,15 @@ namespace RndScreenSaver
 
                 if (firstArgument == "/c")           // Configuration mode
                 {
-                    // TODO
+                    Application.Run(new SettingsForm());
                 }
                 else if (firstArgument == "/p")      // Preview mode
                 {
-                    // TODO
+                    if (secondArgument == null)
+                    {
+                        MessageBox.Show("Došlo k chybě při pokus o zobrazení nastavení šetřiče obrazovky","Šetřič obrazovky", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
                 }
                 else if (firstArgument == "/s")      // Full-screen mode
                 {
@@ -49,14 +53,14 @@ namespace RndScreenSaver
                 }
                 else    // Undefined argument
                 {
-                    MessageBox.Show("Sorry, but the command line argument \"" + firstArgument +
-                        "\" is not valid.", "ScreenSaver",
+                    MessageBox.Show("Omlouváme se, ale zadaný argument: \"" + firstArgument +
+                        "\" není platný.", "Šetřič obrazovky",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else    // No arguments - treat like /c
             {
-                // TODO
+                Application.Run(new SettingsForm());
             }
         }
 
