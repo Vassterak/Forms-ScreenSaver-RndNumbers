@@ -55,7 +55,7 @@ namespace RndScreenSaver
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label1.Text = random.LCG_CLike().ToString();
+            label1.Text = "LCG:" + random.LCG_CLike().ToString();
             try
             {
                 label1.Left = (int)(random.LCG_CLike() % this.Width);
@@ -67,10 +67,20 @@ namespace RndScreenSaver
                 throw;
             }
         }
-
+        
         private void timer2_Tick(object sender, EventArgs e)
         {
-
+            label1.Text = "MAP:"+ random.LogisticMapAlgorithm().ToString();
+            try
+            {
+                label1.Left = (int)(random.LCG_CLike() % this.Width);
+                label1.Top = (int)(random.LCG_CLike() % this.Height);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error: " + ex);
+                throw;
+            }
         }
 
         private void LoadSettings()

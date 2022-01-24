@@ -22,5 +22,11 @@ namespace RndScreenSaver
             x = x * a + c;
             return x;
         }
+
+        public uint LogisticMapAlgorithm()
+        {
+            x = c * x * (1 - x);
+            return x;
+        }
     }
 }
