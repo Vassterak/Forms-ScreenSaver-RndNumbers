@@ -32,7 +32,7 @@ namespace RndScreenSaver
 
         public uint MyOwnRandom()
         {
-
+            return (uint)(UpTime.TotalMilliseconds * (double)x - (UpTime.TotalMilliseconds / c));
         }
 
         private TimeSpan UpTime

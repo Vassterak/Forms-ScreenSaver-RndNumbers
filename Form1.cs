@@ -85,14 +85,24 @@ namespace RndScreenSaver
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-
+            label1.Text = "My:" + random.MyOwnRandom().ToString();
+            try
+            {
+                label1.Left = (int)(random.LCG_CLike() % this.Width);
+                label1.Top = (int)(random.LCG_CLike() % this.Height);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error: " + ex);
+                throw;
+            }
         }
 
         private void LoadSettings()
         {
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Rnd_ScreenSaver");
             if (key == null)
-                timer1.Enabled = true;
+                timer3.Enabled = true;
 
             else
             {
