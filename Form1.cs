@@ -83,6 +83,11 @@ namespace RndScreenSaver
             }
         }
 
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+
+        }
+
         private void LoadSettings()
         {
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Rnd_ScreenSaver");
@@ -94,8 +99,11 @@ namespace RndScreenSaver
                 if ((int)key.GetValue("GeneratorType") == 0)
                     timer1.Enabled = true;
 
-                else
+                else if ((int)key.GetValue("GeneratorType") == 1)
                     timer2.Enabled = true;
+
+                else
+                    timer3.Enabled = true;
             }
         }
     }

@@ -31,11 +31,21 @@ namespace RndScreenSaver
                 {
                     radioButton1.Checked = true;
                     radioButton2.Checked = false;
+                    radioButton3.Checked = false;
                 }
-                else
+
+                else if ((int)key.GetValue("GeneratorType") == 1)
                 {
                     radioButton1.Checked = false;
                     radioButton2.Checked = true;
+                    radioButton3.Checked = false;
+                }
+
+                else
+                {
+                    radioButton1.Checked = false;
+                    radioButton2.Checked = false;
+                    radioButton3.Checked = true;
                 }
             }
         }
@@ -49,6 +59,9 @@ namespace RndScreenSaver
 
             else if (radioButton2.Checked)
                 key.SetValue("GeneratorType", 1);
+
+            else if (radioButton3.Checked)
+                key.SetValue("GeneratorType", 2);
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
