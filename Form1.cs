@@ -101,8 +101,9 @@ namespace RndScreenSaver
         private void LoadSettings()
         {
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Rnd_ScreenSaver");
+
             if (key == null)
-                timer3.Enabled = true;
+                timer1.Enabled = true;
 
             else
             {
