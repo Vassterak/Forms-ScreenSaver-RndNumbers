@@ -9,7 +9,21 @@ namespace RndScreenSaver
 {
     public class MyRandom
     {
-        uint x, a, c; 
+        uint x, a, c;
+
+        private TimeSpan UpTime
+        {
+            get
+            {
+                using (var uptime = new PerformanceCounter("System", "System Up Time"))
+                {
+                    //Call this an extra time before reading its value
+                    uptime.NextValue();
+                    return TimeSpan.FromSeconds(uptime.NextValue());
+                }
+            }
+        }
+
         public MyRandom()
         {
             //C like pseudo generation
@@ -33,18 +47,6 @@ namespace RndScreenSaver
         public uint MyOwnRandom()
         {
             return (uint)(UpTime.TotalMilliseconds * (double)x - (UpTime.TotalMilliseconds / c));
-        }
-
-        private TimeSpan UpTime
-        {
-            get
-            {
-                using (var uptime = new PerformanceCounter("System", "System Up Time"))
-                {
-                    uptime.NextValue();       //Call this an extra time before reading its value
-                    return TimeSpan.FromSeconds(uptime.NextValue());
-                }
-            }
         }
     }
 }

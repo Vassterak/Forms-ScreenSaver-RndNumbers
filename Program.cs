@@ -54,13 +54,14 @@ namespace RndScreenSaver
                 else
                     MessageBox.Show("Omlouváme se, ale zadaný argument: \"" + firstArgument +"\" není platný.", "Šetřič obrazovky",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            // No arguments - treat like /c
+            // No arguments -> treat like /c
             else
                 Application.Run(new SettingsForm());
         }
 
         static void ShowScreenSaver()
         {
+            //Enable full screen mode on all available screens
             foreach (Screen screen in Screen.AllScreens)
             {
                 Form1 screensaver = new Form1(screen.Bounds);
