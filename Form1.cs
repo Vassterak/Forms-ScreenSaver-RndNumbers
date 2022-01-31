@@ -33,9 +33,7 @@ namespace RndScreenSaver
         {
             if (!mouseLocation.IsEmpty)
             {
-                // Terminate if mouse is moved a significant distance
-                if (Math.Abs(mouseLocation.X - e.X) > 5 ||
-                    Math.Abs(mouseLocation.Y - e.Y) > 5)
+                if (Math.Abs(mouseLocation.X - e.X) > 5 || Math.Abs(mouseLocation.Y - e.Y) > 5)
                     Application.Exit();
             }
 
