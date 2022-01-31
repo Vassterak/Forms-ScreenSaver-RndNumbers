@@ -38,7 +38,7 @@ namespace RndScreenSaver
                 {
                     if (secondArgument == null)
                     {
-                        MessageBox.Show("Došlo k chybě při pokus o zobrazení nastavení šetřiče obrazovky","Šetřič obrazovky", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Tato funce není podporována","Šetřič obrazovky", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                 }

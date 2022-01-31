@@ -33,8 +33,7 @@ namespace RndScreenSaver
         {
             if (!mouseLocation.IsEmpty)
             {
-                if (Math.Abs(mouseLocation.X - e.X) > 5 ||
-                    Math.Abs(mouseLocation.Y - e.Y) > 5)
+                if (Math.Abs(mouseLocation.X - e.X) > 5 || Math.Abs(mouseLocation.Y - e.Y) > 5)
                     Application.Exit();
             }
             mouseLocation = e.Location;
@@ -67,7 +66,7 @@ namespace RndScreenSaver
         
         private void timer2_Tick(object sender, EventArgs e)
         {
-            label1.Text = "MAP:"+ random.LogisticMapAlgorithm().ToString();
+            label1.Text = "My:" + random.MyOwnRandom().ToString();
             try
             {
                 label1.Left = (int)(random.LCG_CLike() % this.Width);
@@ -82,7 +81,7 @@ namespace RndScreenSaver
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            label1.Text = "My:" + random.MyOwnRandom().ToString();
+            label1.Text = "MAP:" + random.LogisticMapAlgorithm().ToString();
             try
             {
                 label1.Left = (int)(random.LCG_CLike() % this.Width);
