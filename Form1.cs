@@ -51,7 +51,7 @@ namespace RndScreenSaver
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label1.Text = "LCG:" + random.LCG_CLike().ToString();
+            label1.Text = "LCG: " + random.LCG_CLike().ToString();
             try
             {
                 label1.Left = (int)(random.LCG_CLike() % this.Width);
@@ -66,7 +66,7 @@ namespace RndScreenSaver
         
         private void timer2_Tick(object sender, EventArgs e)
         {
-            label1.Text = "My:" + random.MyOwnRandom().ToString();
+            label1.Text = "My: " + random.MyOwnRandom().ToString();
             try
             {
                 label1.Left = (int)(random.LCG_CLike() % this.Width);
@@ -81,11 +81,11 @@ namespace RndScreenSaver
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            label1.Text = "MAP:" + random.LogisticMapAlgorithm().ToString();
+            label1.Text = "MAP: " + random.LogisticMapAlgorithm().ToString();
             try
             {
-                label1.Left = (int)(random.LCG_CLike() % this.Width);
-                label1.Top = (int)(random.LCG_CLike() % this.Height);
+                label1.Left = (int)(random.LCG_CLike() % (this.Width - 50));
+                label1.Top = (int)(random.LCG_CLike() % (this.Height - 30));
             }
             catch (Exception ex)
             {
