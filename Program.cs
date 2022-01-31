@@ -61,7 +61,6 @@ namespace RndScreenSaver
 
         static void ShowScreenSaver()
         {
-            //Enable full screen mode on all available screens
             foreach (Screen screen in Screen.AllScreens)
             {
                 Form1 screensaver = new Form1(screen.Bounds);

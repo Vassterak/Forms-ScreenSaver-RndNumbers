@@ -55,13 +55,13 @@ namespace RndScreenSaver
             RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Rnd_ScreenSaver");
 
             if (radioButton1.Checked)
-                key.SetValue("GeneratorType", 0); //0 represents ID
+                key.SetValue("GeneratorType", 0);
 
             else if (radioButton2.Checked)
-                key.SetValue("GeneratorType", 1); //ID
+                key.SetValue("GeneratorType", 1);
 
             else if (radioButton3.Checked)
-                key.SetValue("GeneratorType", 2); //ID
+                key.SetValue("GeneratorType", 2);
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
